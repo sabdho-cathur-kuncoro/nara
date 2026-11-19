@@ -91,12 +91,24 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 16),
             OutlinedButton.icon(
               onPressed: () => guard(context, auth.loginWithGoogle),
+              // Brand colors per Google sign-in guidelines, not app theme.
+              style: OutlinedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: const Color(0xFF1F1F1F),
+                side: const BorderSide(color: Color(0xFF747775)),
+              ),
               icon: const Icon(Icons.g_mobiledata),
               label: const Text('Continue with Google'),
             ),
             const SizedBox(height: 8),
             OutlinedButton.icon(
               onPressed: () => guard(context, auth.loginWithApple),
+              // Brand colors per Apple sign-in guidelines, not app theme.
+              style: OutlinedButton.styleFrom(
+                backgroundColor: Colors.black,
+                foregroundColor: Colors.white,
+                side: const BorderSide(color: Colors.black),
+              ),
               icon: const Icon(Icons.apple),
               label: const Text('Continue with Apple'),
             ),
